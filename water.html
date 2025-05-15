@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Intake Advisor</title>
+  <link rel="stylesheet" href="water.css">
+</head>
+<body>
+  <div class="container">
+    <h1>💧 Water Intake Advisor</h1>
+    <p>Get personalized advice based on your age and weight.</p>
+
+    <!-- Input Form -->
+    <form id="advisor-form">
+      <input type="number" id="age" placeholder="Enter your age (years)" required>
+      <input type="number" id="weight" placeholder="Enter your weight (kg)" required>
+      <select id="activity" required>
+        <option value="" disabled selected>Choose Activity Level</option>
+        <option value="1">Low</option>
+        <option value="2">Moderate</option>
+        <option value="3">High</option>
+      </select>
+      <button type="submit">Get Advice</button>
+    </form>
+
+    <!-- Advice Section -->
+    <div id="advice" style="display: none;">
+      <h2>Your Personalized Advice 💡</h2>
+      <p id="recommendation"></p>
+      <h3>Hydration Tips:</h3>
+      <ul id="hydration-tips"></ul>
+      <p id="motivational-message"></p>
+    </div>
+  </div>
+  <script src="water.js"></script>
+</body>
+</html>

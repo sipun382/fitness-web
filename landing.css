@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: white;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem 2rem;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+
+.logo {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('gym.jpg') center/cover;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: #ff0000;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.btn {
+    background-color: #ff0000;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section {
+    padding: 5rem 4rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+        padding: 3rem 2rem;
+        text-align: center;
+    }
+    
+    .section-images {
+        grid-template-columns: 1fr; /* Stack images in a single column */
+    }
+}
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('gym.jpg') center/cover;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .hero p {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+    }
+}
+
+
+.hero h1 {
+    font-size: 4rem;
+    color: #ff0000;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.btn {
+    background-color: #ff0000;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section {
+    padding: 5rem 4rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-content {
+    flex: 1;
+}
+
+.section-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.section-content p {
+    color: #888;
+    margin-bottom: 1.5rem;
+}
+
+.section-images {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.section-images img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.red-text {
+    color: #ff0000;
+}
+
+.white-text {
+    color: white;
+}
+
+.keep-fit-section {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.keep-fit-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/*fitness tips box*/
+
+.fitness-tips {
+padding: 4rem 2rem;
+background-color: #1a1a1a;
+color: white;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+.tips-container .tip h3 {
+    margin-top: 20px; /* Adds space between the tips */
+}
+
+
+.fitness-tips h2 {
+font-size: 2.5rem;
+margin-bottom: 40px;
+}
+
+.tips-container {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 2rem;
+max-width: 1200px; /* Optional: Adjust width as needed */
+width: 100%;
+justify-items: center; /* Centers items inside the grid */
+}
+
+.tip {
+background-color: #333;
+padding: 2rem;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+width: 100%;
+max-width: 350px; /* Optional: limit the width of each tip */
+}
+
+.tip h3 {
+font-size: 1.8rem;
+margin-bottom: 1rem;
+}
+
+.tip p {
+color: #aaa;
+font-size: 1rem;
+}
+
+
+.footer {
+    background-color: #000;
+    padding: 2rem 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 1rem 2rem; /* Adjust padding for smaller screens */
+    }
+}
+
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+    
+    .section {
+        flex-direction: column;
+        padding: 3rem 2rem;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}

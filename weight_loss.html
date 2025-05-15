@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Loss Diet Recipes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="showMeals()">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <h1>Weight Loss Diet Recipes</h1>
+        <a href="diet.html" class="back-button">Back to Home</a>
+    </nav>
+
+    <!-- Container for meal options -->
+    <div class="meal-container">
+        <!-- Breakfast Card -->
+        <a href="wl_breakfast.html" class="meal-card slide-in-left" id="breakfast">
+            <img src="images/breakfast1.jpg" alt="Breakfast">
+            <div class="meal-content">
+                <h2>Breakfast</h2>
+                <p>"Start your day with a power-packed meal!"</p>
+            </div>
+        </a>
+
+        <!-- Lunch Card -->
+        <a href="wl_lunch.html" class="meal-card slide-in-right" id="lunch">
+            <img src="images/lunch1.jpg" alt="Lunch">
+            <div class="meal-content">
+                <h2>Lunch</h2>
+                <p>"Keep your energy levels high with a nutritious lunch!"</p>
+            </div>
+        </a>
+
+        <!-- Dinner Card -->
+        <a href="wl_dinner.html" class="meal-card slide-in-left" id="dinner">
+            <img src="images/dinner1.jpg" alt="Dinner">
+            <div class="meal-content">
+                <h2>Dinner</h2>
+                <p>"End your day with a light & healthy dinner!"</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Healthy Diet Planner</p>
+    </footer>
+
+    <script>
+        function showMeals() {
+            setTimeout(() => document.getElementById("breakfast").classList.add("visible"), 300); 
+            setTimeout(() => document.getElementById("lunch").classList.add("visible"), 600); 
+            setTimeout(() => document.getElementById("dinner").classList.add("visible"), 900); 
+        }
+    </script>
+
+</body>
+</html>

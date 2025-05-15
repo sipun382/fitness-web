@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="dashboard1.css" rel="stylesheet">
+    <title>Fitness Dashboard</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo">
+                
+                FITZONE
+            </div>
+        </div>
+        <div class="nav-links">
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </nav>
+
+    <div>
+    <div class="container">
+        <h1><i class="fas fa-dumbbell"></i> Fitness Dashboard</h1>
+    </div>
+
+    <div>
+    <main class="dashboard">
+        <!-- Profile Section -->
+        <a href="profile.html" class="dashboard-box">
+            <div class="box">
+                
+                <h2><i class="fas fa-user"></i> Profile Overview</h2>
+                <p>View and manage your personal information, fitness stats, and goals.</p>
+            </div>
+        </a>
+
+        <!-- Diet Plan Section -->
+        <a href="diet.html" class="dashboard-box">
+            <div class="box">
+                <h2><i class="fas fa-utensils"></i> Diet Plan</h2>
+                <p>Explore customized diet plans tailored to your fitness goals.</p>
+            </div>
+        </a>
+
+        <!-- Exercise Tracker -->
+        <a href="Exercise.html" class="dashboard-box">
+            <div class="box">
+                <h2><i class="fas fa-running"></i> Exercise <h2>
+                <p>Track your workouts and monitor your progress.</p>
+            </div>
+        </a>
+
+        
+
+        <!-- Water Tracker -->
+        <a href="water.html" class="dashboard-box">
+            <div class="box">
+                <h2><i class="fas fa-tint"></i> Water Intake Advisor</h2>
+                <p>Log your daily water intake and stay hydrated.</p>
+            </div>
+        </a>
+    </main>
+</div>
+</div>
+<script>
+    document.getElementById("logoutBtn").addEventListener("click", function () {
+        fetch('/logout', { method: 'POST' }) // Call logout API
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = "landing.html"; // Redirect to landing page
+                }
+            })
+            .catch(error => console.error("Logout failed:", error));
+    });
+</script>
+</body>
+</html>

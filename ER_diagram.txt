@@ -1,0 +1,49 @@
+Entity-Relationship Diagram:
+
+Entities:
+1. User
+   - UserID (PK)
+   - Name
+   - Email
+   - Phone
+   - Age
+   - Gender
+   - Password
+   - Height
+   - Weight
+   - BMI
+   - Goal
+
+2. Exercise
+   - ExerciseID (PK)
+   - Name
+   - Type
+   - Duration
+   - CaloriesBurned
+   - Date
+   - UserID (FK)
+
+3. Diet
+   - DietID (PK)
+   - FoodItem
+   - Quantity
+   - Calories
+   - Date
+   - UserID (FK)
+
+4. Water Intake
+   - WaterIntakeID (PK)
+   - Amount
+   - Date
+   - UserID (FK)
+
+5. Profile
+   - ProfileID (PK)
+   - UserID (FK)
+   - AdditionalInfo
+
+Relationships:
+- User (1) ---- (M) Exercise
+- User (1) ---- (M) Diet
+- User (1) ---- (M) Water Intake
+- User (1) ---- (1) Profile
