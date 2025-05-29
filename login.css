@@ -1,0 +1,86 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #000000, #550000);
+}
+
+@keyframes backgroundAnimation {
+  0% { background: linear-gradient(45deg, #800000, #000, #ff0000); }
+  100% { background: linear-gradient(45deg, #ff0000, #000, #800000); }
+}
+
+.login-box {
+  background: rgba(17, 17, 17, 0.9);
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  text-align: center;
+  color: #fff;
+  width: 400px;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.login-box:hover {
+  transform: scale(1.05);
+}
+
+.user-box {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.user-box input {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border: 2px solid #ff0000;
+  border-radius: 5px;
+  background: #111;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.user-box input:focus {
+  border-color: #ff0000;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.7);
+}
+
+.user-box label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 14px;
+  color: #ff4d4d;
+  transition: 0.3s;
+}
+
+.user-box input:focus + label,
+.user-box input:valid + label {
+  top: -10px;
+  left: 12px;
+  font-size: 12px;
+  color: #ff0000;
+}
+
+.flashy-button {
+  background: linear-gradient(45deg, #ff0000, #cc0000);
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+}
+
+.flashy-button:hover {
+  background: linear-gradient(45deg, #cc0000, #ff0000);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+  transform: scale(1.1);
+}

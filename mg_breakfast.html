@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Body Building Breakfast Recipes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #000000, #ff2e2e);
+      color: white;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ffffff;
+      margin-top: 60px;
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .recipe-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding-bottom: 15px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px rgba(255, 0, 0, 0.7);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h2 {
+      margin: 15px 0 10px;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .card p {
+      margin: 0 0 10px;
+    }
+
+    button {
+      background: #ff2e2e;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #ff1a1a;
+    }
+
+    .total-calories {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-top: 20px;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      background: black;
+      padding: 0;
+      border-radius: 10px;
+    }
+
+    .modal-content iframe {
+      width: 100%;
+      height: 450px;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .close:hover {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Body Building Breakfast Recipes</h1>
+  <p>Explore our delicious and healthy collection of body building breakfast recipes!</p>
+
+  <h2 class="total-calories">Total Calories: <span id="total-calories">0</span></h2>
+
+  <div class="recipe-container">
+    <!-- Card 1 -->
+    <div class="card">
+      <img src="images/oats banana and whey protein.jpg" alt="Oats with banana and whey protein">
+      <h2>Oats with Banana & Whey Protein</h2>
+      <p>Calories: <span class="calories">395</span></p>
+      <button class="add-button" data-calories="395">Add</button>
+      <button class="remove-button" data-calories="395">Remove</button>
+      <button class="watch-button" data-video="https://www.youtube.com/embed/VaX3JoqEgas">Watch Video</button>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <img src="images/Egg and spinach toast.jpg" alt="Egg and spinach toast">
+      <h2>Egg and Spinach Toast</h2>
+      <p>Calories: <span class="calories">410</span></p>
+      <button class="add-button" data-calories="410">Add</button>
+      <button class="remove-button" data-calories="410">Remove</button>
+      <button class="watch-button" data-video="https://www.youtube.com/embed/RfDb85xziaY">Watch Video</button>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <img src="images/paneer-spinach-omlette.jpg" alt="Paneer and Spinach Omelette">
+      <h2>Paneer & Spinach Omelette</h2>
+      <p>Calories: <span class="calories">250</span></p>
+      <button class="add-button" data-calories="250">Add</button>
+      <button class="remove-button" data-calories="250">Remove</button>
+      <button class="watch-button" data-video="https://www.youtube.com/embed/A72xo_L9COM">Watch Video</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Healthy Diet Planner</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js">
+    /*let totalCalories = 0;
+
+    const totalCaloriesEl = document.getElementById('total-calories');
+    const addButtons = document.querySelectorAll('.add-button');
+    const removeButtons = document.querySelectorAll('.remove-button');
+
+    addButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        totalCalories += parseInt(btn.dataset.calories);
+        totalCaloriesEl.textContent = totalCalories;
+      });
+    });
+
+    // Add/Remove Calories
+    document.querySelectorAll('.add-button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        totalCalories += parseInt(btn.dataset.calories);
+        totalCaloriesEl.textContent = totalCalories;
+      });
+    });
+
+    document.querySelectorAll('.remove-button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        totalCalories -= parseInt(btn.dataset.calories);
+        if (totalCalories < 0) totalCalories = 0;
+        totalCaloriesEl.textContent = totalCalories;
+      });
+    });
+
+    // Modal Video
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const closeModal = document.querySelector('.close');
+
+    document.querySelectorAll('.watch-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const videoUrl = button.dataset.video;
+        modalVideo.src = videoUrl;
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+      modalVideo.src = '';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        modalVideo.src = '';
+      }
+    });*/
+  </script>
+</body>
+</html>

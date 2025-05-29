@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weight Loss Dinner Recipes</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #000000, #ff2e2e);
+      color: white;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ffffff;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 5px;
+    }
+
+    .recipe-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding-bottom: 15px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h2 {
+      margin: 0;
+      padding: 15px;
+      font-size: 1.5rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px rgba(255, 0, 0, 0.7);
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      width: 80%;
+      max-width: 800px;
+      background: black;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .modal iframe {
+      width: 100%;
+      height: 450px;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Buttons */
+    button {
+      background: #ff2e2e;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #ff1a1a;
+    }
+
+    /* Total Calories */
+    .total-calories {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Weight Loss Dinner Recipes</h1>
+  <p>Explore our delicious and healthy collection of weight loss dinner recipes!</p>
+  <h2 id="total-calories">Total Calories: 0</h2>
+
+  <div class="recipe-container">
+    <!-- Card 1 -->
+    <div class="card">
+      <img src="images/lentil.jpg" alt="Lentil Curry with Bread">
+      <h2>Lentil Curry with Bread</h2>
+      <p>Calories: <span class="calories">450</span></p>
+      <div class="button-container">
+        <button class="watch-button" data-video="dg_Ag3KorDU">Watch Recipe</button>
+        <button class="add-button" data-calories="450">Add</button>
+        <button class="remove-button" data-calories="450">Remove</button>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <img src="images\tofu and stirfry veggies.jpg" alt="Vegetable Stir-Fry with Tofu">
+      <h2>Vegetable Stir-Fry with Tofu</h2>
+      <p>Calories: <span class="calories">400</span></p>
+      <div class="button-container">
+        <button class="watch-button" data-video="qhX9ylUox-U">Watch Recipe</button>
+        <button class="add-button" data-calories="400">Add</button>
+        <button class="remove-button" data-calories="400">Remove</button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <img src="images/palak.jpg" alt="Palak Paneer with Whole Wheat Roti">
+      <h2>Palak Paneer with Whole Wheat Roti</h2>
+      <p>Calories: <span class="calories">350</span></p>
+      <div class="button-container">
+        <button class="watch-button" data-video="4Ddo_rQIC8g">Watch Recipe</button>
+        <button class="add-button" data-calories="350">Add</button>
+        <button class="remove-button" data-calories="350">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Modal -->
+  <div class="modal" id="videoModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script src="script.js">
+  </script>
+
+</body>
+</html>

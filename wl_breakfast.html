@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weight Loss Breakfast Recipes</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #000000, #ff2e2e);
+      color: white;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+    }
+
+    .recipe-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 15px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h2 {
+      margin: 0;
+      padding: 15px;
+      font-size: 1.5rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    /* Modal styles */
+    /* Modal styles */
+.modal {
+  display: none; /* Hide modal initially */
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-content {
+  width: 80%;
+  max-width: 800px;
+  background: black;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.modal iframe {
+  width: 100%;
+  height: 450px;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+
+    /* Buttons */
+    button {
+      background: #ff2e2e;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #ff1a1a;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Weight Loss Breakfast Recipes</h1>
+  <p>Explore our delicious and healthy collection of weight loss breakfast recipes!</p>
+  <h2 id="total-calories">Total Calories: 0</h2>
+  <div class="recipe-container">
+    <!-- Card 1 -->
+    <div class="card">
+      <img src="images/besanchilla.jpg" alt="Besan Chilla">
+      <h2>Besan Chilla</h2>
+      <p>Calories: <span class="calories">240</span></p>
+      <button class="open-modal" data-video="https://www.youtube.com/embed/SeW3Ae8JsSg">Watch Video</button>
+      <button class="add-button" data-calories="240">Add</button>
+      <button class="remove-button" data-calories="240">Remove</button>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <img src="images/quinoa-salad.jpg" alt="Quinoa Salad">
+      <h2>Quinoa Salad</h2>
+      <p>Calories: <span class="calories">405</span></p>
+      <button class="open-modal" data-video="https://www.youtube.com/embed/OQ9mU_zAtEs">Watch Video</button>
+      <button class="add-button" data-calories="405">Add</button>
+      <button class="remove-button" data-calories="405">Remove</button>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <img src="images/vegetable-soup.jpg" alt="Vegetable Soup">
+      <h2>Vegetable Soup</h2>
+      <p>Calories: <span class="calories">340</span></p>
+      <button class="open-modal" data-video="https://www.youtube.com/embed/pQP0wYejBes">Watch Video</button>
+      <button class="add-button" data-calories="340">Add</button>
+      <button class="remove-button" data-calories="340">Remove</button>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <img src="images/mexican_style_wraps.jpg" alt="Mexican Style Wraps">
+      <h2>Mexican Style Wraps</h2>
+      <p>Calories: <span class="calories">318</span></p>
+      <button class="open-modal" data-video="https://www.youtube.com/embed/1aNLcCOdiP4">Watch Video</button>
+      <button class="add-button" data-calories="318">Add</button>
+      <button class="remove-button" data-calories="318">Remove</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Healthy Diet Planner</p>
+  </footer>
+
+  <script src="script.js">
+    
+    // Get modal elements
+/*const modal = document.getElementById("videoModal");
+const modalVideo = document.getElementById("modalVideo");
+const closeBtn = document.querySelector(".close");
+
+// Function to open modal
+document.querySelectorAll(".open-modal").forEach(button => {
+  button.addEventListener("click", function() {
+    let videoSrc = this.getAttribute("data-video");
+    modalVideo.src = videoSrc + "?autoplay=1";
+    modal.style.display = "flex"; // Show modal
+    setTimeout(() => {
+      modal.style.opacity = "1";
+      modal.style.visibility = "visible";
+    }, 10);
+  });
+});
+
+// Function to close modal
+function closeModal() {
+  modal.style.opacity = "0";
+  modal.style.visibility = "hidden";
+  setTimeout(() => {
+    modal.style.display = "none";
+    modalVideo.src = ""; // Stop video
+  }, 300);
+}
+
+// Close modal on close button
+closeBtn.addEventListener("click", closeModal);
+
+// Close modal when clicking outside the video
+modal.addEventListener("click", function(e) {
+  if (e.target === this) {
+    closeModal();
+  }
+});*/
+
+  </script>
+</body>
+</html>
